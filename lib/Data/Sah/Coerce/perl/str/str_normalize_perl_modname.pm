@@ -1,4 +1,4 @@
-package Data::Sah::Coerce::perl::perl__modname::str;
+package Data::Sah::Coerce::perl::str::str_normalize_perl_modname;
 
 # DATE
 # VERSION
@@ -33,7 +33,7 @@ sub coerce {
 }
 
 1;
-# ABSTRACT: Coerce perl::distname from str
+# ABSTRACT: Coerce perl::modname from str
 
 =for Pod::Coverage ^(meta|coerce)$
 

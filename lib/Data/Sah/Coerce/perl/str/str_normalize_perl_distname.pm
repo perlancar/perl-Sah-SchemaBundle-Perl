@@ -1,4 +1,4 @@
-package Data::Sah::Coerce::perl::perl__distname::str;
+package Data::Sah::Coerce::perl::str::str_normalize_perl_distname;
 
 # DATE
 # VERSION
