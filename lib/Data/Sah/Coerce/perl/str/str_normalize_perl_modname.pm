@@ -26,7 +26,7 @@ sub coerce {
     $res->{expr_match} = "1";
     $res->{expr_coerce} = join(
         "",
-        "do { my \$tmp = $dt; \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.!::!g; \$tmp }",
+        "do { my \$tmp = $dt; \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.|-!::!g; \$tmp }",
     );
 
     $res;
