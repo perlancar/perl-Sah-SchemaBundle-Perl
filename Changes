@@ -1,5 +1,12 @@
 Revision history for Sah-Schemas-Perl
 
+0.006   2016-08-03 (PERLANCAR)
+
+	- [Bugfix] perl::modname: Missed normalizing Foo-Bar -> Foo::Bar.
+
+	- Add tests.
+
+
 0.005   2016-08-03 (PERLANCAR)
 
 	- [Bugfix] Normalize Foo/Bar.pm into Foo::Bar (or Foo-Bar for dist)
