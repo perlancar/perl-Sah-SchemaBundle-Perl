@@ -1,5 +1,11 @@
 Revision history for Sah-Schemas-Perl
 
+0.005   2016-08-03 (PERLANCAR)
+
+	- [Bugfix] Normalize Foo/Bar.pm into Foo::Bar (or Foo-Bar for dist)
+	  instead of Foo::Bar::pm (or Foo-Bar-pm).
+
+
 0.004   2016-07-25 (PERLANCAR)
 
 	- Add schema: perl::version.
