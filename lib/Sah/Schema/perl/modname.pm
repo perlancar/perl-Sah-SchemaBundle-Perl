@@ -9,6 +9,10 @@ our $schema = [str => {
     'x.perl.coerce_rules' => [
         'str_normalize_perl_modname',
     ],
+
+    # provide a default completion which is from list of installed perl modules
+    'x.completion' => 'perl_modname',
+
 }, {}];
 
 1;

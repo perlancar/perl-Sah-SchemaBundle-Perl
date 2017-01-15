@@ -9,6 +9,10 @@ our $schema = [str => {
     'x.perl.coerce_rules' => [
         'str_normalize_perl_distname',
     ],
+
+    # provide a default completion which is from list of installed perl distributions
+    'x.completion' => 'perl_distname',
+
 }, {}];
 
 1;
