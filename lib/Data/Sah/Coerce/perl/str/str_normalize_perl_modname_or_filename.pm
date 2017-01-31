@@ -1,0 +1,60 @@
+package Data::Sah::Coerce::perl::str::str_normalize_perl_modname_or_filename;
+
+# DATE
+# VERSION
+
+use 5.010001;
+use strict;
+use warnings;
+
+sub meta {
+    +{
+        v => 2,
+        enable_by_default => 0,
+        might_die => 0,
+        prio => 50,
+    };
+}
+
+sub coerce {
+    my %args = @_;
+
+    my $dt = $args{data_term};
+
+    my $res = {};
+
+    $res->{expr_match} = "1";
+    $res->{modules}{"Module::Path::More"} //= 0;
+    $res->{expr_coerce} = join(
+        "",
+        "do { my \$orig = $dt; my \$tmp = \$orig; ",
+        # try normalize into a module name and check if the module exists
+        "\$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.|-!::!g; ",
+        " Module::Path::More::module_path(module => \$tmp, find_pod => 1) ? \$tmp : \$orig; ",
+        "}",
+    );
+
+    $res;
+}
+
+1;
+# ABSTRACT: Coerce str into perl module form only if module exists
+
+=for Pod::Coverage ^(meta|coerce)$
+
+=head1 DESCRIPTION
+
+This rule can normalize strings in the form of:
+
+ Foo:Bar
+ Foo-Bar
+ Foo/Bar.pm
+ Foo/Bar
+ Foo.Bar
+
+into:
+
+ Foo::Bar
+
+but only if C<Foo::Bar> module exists (checked using L<Module::Path::More>).
+Otherwise, it leaves the string as-is.
