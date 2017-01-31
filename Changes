@@ -1,3 +1,8 @@
+0.007   2017-01-31 (PERLANCAR)
+
+	- Add schema: perl_modname_or_filename.
+
+
 0.006   2016-08-03 (PERLANCAR)
 
 	- [Bugfix] perl::modname: Missed normalizing Foo-Bar -> Foo::Bar.
