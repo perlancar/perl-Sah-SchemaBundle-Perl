@@ -4,11 +4,38 @@ package Sah::Schema::perl::filename;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl module name or file name',
-    'x.perl.coerce_rules' => [
-        'str_normalize_perl_modname_or_filename',
-    ],
+    summary => 'Filename (Perl script/module/POD)',
+    description => <<'_',
 
+String containing filename of a Perl script or module or POD. For convenience,
+when value is in the form of:
+
+    Foo
+    Foo.pm
+    Foo.pod
+    Foo::Bar
+    Foo/Bar
+    Foo/Bar.pm
+    Foo/Bar.pod
+
+and a matching .pod or .pm file is found in `@INC`, then it will be coerced into
+the path of that .pod/.pm file, e.g.:
+
+    /home/ujang/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Foo/Bar.pm
+    lib/Foo/Bar.pod
+
+To prevent such coercion, you can use prefixing path, e.g.:
+
+    ./Foo::Bar
+    ../Foo/Bar
+    /path/to/Foo/Bar
+
+This schema comes with convenience completion too.
+
+_
+    'x.perl.coerce_rules' => [
+        'str_convert_perl_pm_or_pod_to_path',
+    ],
     'x.completion' => sub {
         require Complete::File;
         require Complete::Module;
