@@ -1,10 +1,10 @@
-package Sah::Schema::perl::mod_filename;
+package Sah::Schema::perl::pm_filename;
 
 # DATE
 # VERSION
 
 our $schema = [str => {
-    summary => 'Filename (Perl module)',
+    summary => 'Filename (.pm file)',
     description => <<'_',
 
 String containing filename of a Perl module. For convenience, when value is in
