@@ -1,4 +1,4 @@
-package Data::Sah::Coerce::perl::str::str_convert_perl_pm_or_pod_to_path;
+package Data::Sah::Coerce::perl::str::str_convert_perl_pm_to_path;
 
 # DATE
 # VERSION
@@ -29,9 +29,9 @@ sub coerce {
         "",
         "do { ",
         "my \$_sahc_orig = $dt; ",
-        "if (\$_sahc_orig =~ m!\\A\\w+((?:/|::)\\w+)*(?:\\.pm|\\.pod)?\\z!) {",
-        "  (my \$tmp = \$_sahc_orig) =~ s!/!::!g; my \$ext; \$tmp =~ s/\\.(pm|pod)\\z// and \$ext = \$1;",
-        "  Module::Path::More::module_path(module=>\$tmp, find_pm=>!\$ext || \$ext eq 'pm', find_pod=>!\$ext || \$ext eq 'pod', find_prefix=>0, find_pmc=>0) || \$_sahc_orig ",
+        "if (\$_sahc_orig =~ m!\\A\\w+((?:/|::)\\w+)*(?:\\.pm)?\\z!) {",
+        "  (my \$tmp = \$_sahc_orig) =~ s!/!::!g; my \$ext; \$tmp =~ s/\\.(pm)\\z// and \$ext = \$1;",
+        "  Module::Path::More::module_path(module=>\$tmp, find_pm=>!\$ext || \$ext eq 'pm', find_pod=>0, find_prefix=>0, find_pmc=>0) || \$_sahc_orig ",
         "} else {",
         "  \$_sahc_orig ",
         "} ",
@@ -42,7 +42,7 @@ sub coerce {
 }
 
 1;
-# ABSTRACT: Convert module/POD name existing in @INC to its filesystem path
+# ABSTRACT: Convert module name existing in @INC to its filesystem path
 
 =for Pod::Coverage ^(meta|coerce)$
 
@@ -53,8 +53,7 @@ This rule can convert strings in the form of:
  Foo::Bar
  Foo/Bar
  Foo/Bar.pm
- Foo/Bar.pod
 
 into the filesystem path (e.g.
 C</home/ujang/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Foo/Bar.pm>)
-when the module or POD exists in C<@INC>. Otherwise, it leaves the string as-is.
+when the module exists in C<@INC>. Otherwise, it leaves the string as-is.

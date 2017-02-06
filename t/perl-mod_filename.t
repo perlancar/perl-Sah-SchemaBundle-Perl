@@ -12,7 +12,7 @@ subtest "coercion" => sub {
     test_needs 'Data::Sah::Coerce';
 
     my $c = Data::Sah::Coerce::gen_coercer(
-        type=>"str", coerce_rules => ['str_convert_perl_pm_or_pod_to_path']);
+        type=>"str", coerce_rules => ['str_convert_perl_pm_to_path']);
 
     is_deeply($c->([]), [], "uncoerced");
     is($c->("*"), "*", "uncoerced 2");
@@ -21,10 +21,10 @@ subtest "coercion" => sub {
     is($c->("Test::More"), module_path(module => "Test::More"), "becomes module path 2");
     is($c->("Test/More"), module_path(module => "Test::More"), "becomes module path 3");
     is($c->("Test/More.pm"), module_path(module => "Test::More"), "becomes module path 4");
-    if (pod_path(module => "Rinci")) {
-        is($c->("Rinci.pod"), pod_path(module => "Rinci"), "becomes pod path");
-    }
 
+    if (pod_path(module => "Rinci")) {
+        is($c->("Rinci.pod"), "Rinci.pod", "does not become pod path");
+    }
     is($c->("Test/More.pod"), "Test/More.pod", "does not become module path (.pod doesn't exist)");
     is($c->("Thingamagic"), "Thingamagic", "does not become module path (module doesn't exist)");
     is($c->("./strict"), "./strict", "does not become module path (./ prefix)");
