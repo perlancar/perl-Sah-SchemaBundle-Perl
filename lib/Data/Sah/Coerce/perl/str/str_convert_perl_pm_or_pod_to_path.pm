@@ -28,12 +28,12 @@ sub coerce {
     $res->{expr_coerce} = join(
         "",
         "do { ",
-        "my \$tmp = $dt; ",
-        "if (\$tmp =~ m!\\A\\w+((?:/|::)\\w+)*(?:\\.pm|\\.pod)?\\z!) {",
-        "  \$tmp =~ s!/!::!g; \$tmp =~ s/\\.(pm|pod)\\z//;",
-        "  Module::Path::More::module_path(module=>\$tmp) || \$tmp ",
+        "my \$_sahc_orig = $dt; ",
+        "if (\$_sahc_orig =~ m!\\A\\w+((?:/|::)\\w+)*(?:\\.pm|\\.pod)?\\z!) {",
+        "  (my \$tmp = \$_sahc_orig) =~ s!/!::!g; my \$ext; \$tmp =~ s/\\.(pm|pod)\\z// and \$ext = \$1;",
+        "  Module::Path::More::module_path(module=>\$tmp, find_pm=>!\$ext || \$ext eq 'pm', find_pod=>!\$ext || \$ext eq 'pod', find_prefix=>0, find_pmc=>0) || \$_sahc_orig ",
         "} else {",
-        "  \$tmp ",
+        "  \$_sahc_orig ",
         "} ",
         "}",
     );

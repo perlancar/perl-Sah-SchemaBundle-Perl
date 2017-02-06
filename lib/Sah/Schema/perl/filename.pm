@@ -18,8 +18,8 @@ when value is in the form of:
     Foo/Bar.pm
     Foo/Bar.pod
 
-and a matching .pod or .pm file is found in `@INC`, then it will be coerced into
-the path of that .pod/.pm file, e.g.:
+and a matching .pod or .pm file is found in `@INC`, then it will be coerced
+(converted) into the path of that .pod/.pm file, e.g.:
 
     /home/ujang/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Foo/Bar.pm
     lib/Foo/Bar.pod
