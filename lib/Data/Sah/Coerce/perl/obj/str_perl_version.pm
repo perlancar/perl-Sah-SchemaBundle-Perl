@@ -9,9 +9,9 @@ use warnings;
 
 sub meta {
     +{
-        v => 2,
+        v => 3,
         enable_by_default => 0,
-        might_die => 1,
+        might_fail => 1,
         prio => 50,
     };
 }
@@ -26,7 +26,7 @@ sub coerce {
     $res->{expr_match} = "!ref($dt)";
     $res->{expr_coerce} = join(
         "",
-        "version->parse($dt)",
+        "do { my \$v; eval { \$v = version->parse($dt) }; if (\$@) { ['Invalid version format'] } else { [undef, \$v] } }",
     );
 
     $res;
