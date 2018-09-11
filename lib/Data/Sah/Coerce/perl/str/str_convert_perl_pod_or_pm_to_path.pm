@@ -62,6 +62,3 @@ This rule is the same as
 L<Data::Sah::Coerce::perl::str::str_convert_perl_pm_or_pod_to_path> except that
 .pod is prioritized over .pm. If C<Foo.pm> and C<Foo.pod> are both found on the
 filesystem, C<Foo.pod> will be returned.
-
-Note that .pm is prioritized over .pod. If C<Foo.pm> and C<Foo.pod> are both
-found on the filesystem, C<Foo.pm> will be returned.
