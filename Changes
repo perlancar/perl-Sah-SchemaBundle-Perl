@@ -1,3 +1,10 @@
+0.014   2018-09-11 (PERLANCAR)
+
+        - No functional changes.
+
+        - [doc] Fix notes about prioritization of .pm vs .pod.
+
+
 0.013   2018-09-11 (PERLANCAR)
 
 	- Supply module core/pp information for compiling Sah schemas.
