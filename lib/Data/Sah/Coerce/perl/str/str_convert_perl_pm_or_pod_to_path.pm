@@ -57,3 +57,6 @@ This rule can convert strings in the form of:
 into the filesystem path (e.g.
 C</home/ujang/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Foo/Bar.pm>)
 when the module or POD exists in C<@INC>. Otherwise, it leaves the string as-is.
+
+Note that .pm is prioritized over .pod. If C<Foo.pm> and C<Foo.pod> are both
+found on the filesystem, C<Foo.pm> will be returned.
