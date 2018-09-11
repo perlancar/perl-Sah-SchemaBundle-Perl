@@ -22,7 +22,7 @@ sub coerce {
 
     my $res = {};
 
-    $res->{modules}{'Module::Path::More'} //= 0;
+    $res->{modules}{'Module::Path::More'} //= {version=>0, core=>0, pp=>1};
     $res->{expr_match} = "1";
     $res->{expr_coerce} = join(
         "",
