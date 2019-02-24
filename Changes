@@ -1,4 +1,4 @@
-0.018   2019-02-24 (PERLANCAR) (unreleased)
+0.018   2019-02-24 (PERLANCAR)
 
 	- Add schemas: perl::modprefix, perl::modname_or_prefix.
 
