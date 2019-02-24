@@ -7,7 +7,7 @@ our $schema = [str => {
     summary => 'Perl module name or prefix',
     description => <<'_',
 
-Perl module name, e.g. `Foo::Bar`, `Foo::Bar::`.
+Perl module name e.g. `Foo::Bar` or prefix e.g. `Foo::Bar::`.
 
 Contains coercion rule so inputing `Foo-Bar` or `Foo/Bar` will be normalized to
 `Foo::Bar` while inputing `Foo-Bar-` or `Foo/Bar/` will be normalized to

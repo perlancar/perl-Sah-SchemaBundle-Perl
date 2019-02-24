@@ -7,7 +7,7 @@ our $schema = [str => {
     summary => 'Perl module prefix',
     description => <<'_',
 
-Perl module name, e.g. `Foo::Bar::`.
+Perl module prefix, e.g. `Foo::Bar::`.
 
 Contains coercion rule so you can also input:
 
