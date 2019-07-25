@@ -30,6 +30,7 @@ sub coerce {
         "my \$tmp = $dt; \$tmp = [\$tmp] unless ref \$tmp eq 'ARRAY'; ",
         "my \$i = 0; ",
         "while (\$i < \@\$tmp) { ",
+        "  \$tmp->[\$i] =~ s!/!::!g; ",
         "  my \$el = \$tmp->[\$i++]; ",
         "  next unless String::Wildcard::Bash::contains_wildcard(\$el); ",
         "  my \$mods = PERLANCAR::Module::List::list_modules(\$el, {wildcard=>1, list_modules=>1}); ",
@@ -69,3 +70,16 @@ any module name, it will be left unchanged, e.g.:
 will become, respectively:
 
  ["Foo", "Fizz*", "Bar"]
+
+Additionally, for convenience, it also replaces "/" to "::", so:
+
+ "Module/P*"
+
+will also become:
+
+ ["Module::Patch", "Module::Path", "Module::Pluggable"]
+
+
+=head1 SEE ALSO
+
+L<Data::Sah::Coerce::perl::str::str_normalize_perl_modname>
