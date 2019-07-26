@@ -18,9 +18,8 @@ and it will be expanded to e.g.:
 
     ["Module::Patch", "Module::Path", "Module::Pluggable"]
 
-The wildcard syntax supports jokers (`?`, '*`) and brackets (`[abc]`). See the
-`unix` type of wildcard in <pm:Regexp::Wildcards>, which this coercion rule
-uses.
+The wildcard syntax supports jokers (`?`, `*`, `**`), brackets (`[abc]`), and
+braces (`{one,two}`).
 
 _
     of => ["perl::modname", {req=>1}, {}],
