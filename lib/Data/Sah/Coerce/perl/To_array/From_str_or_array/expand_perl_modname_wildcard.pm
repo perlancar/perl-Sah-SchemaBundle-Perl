@@ -1,6 +1,8 @@
-package Data::Sah::Coerce::perl::array::str_or_array_expand_perl_modname_wildcard;
+package Data::Sah::Coerce::perl::To_array::From_str_or_array::expand_perl_modname_wildcard;
 
+# AUTHOR
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -10,6 +12,7 @@ use warnings;
 sub meta {
     +{
         v => 4,
+        summary => 'Expand wildcard of Perl module names',
         prio => 50,
     };
 }
@@ -45,7 +48,7 @@ sub coerce {
 }
 
 1;
-# ABSTRACT: Expand wildcard of Perl module names
+# ABSTRACT:
 
 =for Pod::Coverage ^(meta|coerce)$
 
@@ -82,4 +85,6 @@ will also become:
 
 =head1 SEE ALSO
 
-L<Data::Sah::Coerce::perl::str::str_normalize_perl_modname>
+L<Data::Sah::Coerce::perl::To_str::From_str::NormalizePerlModname>
+
+L<Data::Sah::Coerce::perl::To_array::From_str_or_array::ExpandPerlModprefixWildcard>

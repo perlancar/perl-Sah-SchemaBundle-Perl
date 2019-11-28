@@ -1,6 +1,8 @@
-package Data::Sah::Coerce::perl::str::str_convert_perl_pod_or_pm_to_path;
+package Data::Sah::Coerce::perl::To_str::From_str::convert_perl_pod_or_pm_to_path;
 
+# AUTHOR
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -10,6 +12,7 @@ use warnings;
 sub meta {
     +{
         v => 4,
+        summary => 'Convert POD/module name existing in @INC to its filesystem path',
         prio => 50,
     };
 }
@@ -40,7 +43,7 @@ sub coerce {
 }
 
 1;
-# ABSTRACT: Convert POD/module name existing in @INC to its filesystem path
+# ABSTRACT:
 
 =for Pod::Coverage ^(meta|coerce)$
 
@@ -58,6 +61,6 @@ C</home/ujang/perl5/perlbrew/perls/perl-5.24.0/lib/site_perl/5.24.0/Foo/Bar.pm>)
 when the POD or module exists in C<@INC>. Otherwise, it leaves the string as-is.
 
 This rule is the same as
-L<Data::Sah::Coerce::perl::str::str_convert_perl_pm_or_pod_to_path> except that
+L<Data::Sah::Coerce::perl::To_str::From_str::convert_perl_pm_or_pod_to_path> except that
 .pod is prioritized over .pm. If C<Foo.pm> and C<Foo.pod> are both found on the
 filesystem, C<Foo.pod> will be returned.

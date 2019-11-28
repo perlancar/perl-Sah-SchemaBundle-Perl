@@ -1,6 +1,8 @@
-package Data::Sah::Coerce::perl::str::str_normalize_perl_modname;
+package Data::Sah::Coerce::perl::To_str::From_str::normalize_perl_distname;
 
+# AUTHOR
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -10,6 +12,7 @@ use warnings;
 sub meta {
     +{
         v => 4,
+        summary => 'Coerce perl::distname from str',
         prio => 50,
     };
 }
@@ -24,14 +27,14 @@ sub coerce {
     $res->{expr_match} = "1";
     $res->{expr_coerce} = join(
         "",
-        "do { my \$tmp = $dt; \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.|-!::!g; \$tmp }",
+        "do { my \$tmp = $dt; \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.!-!g; \$tmp }",
     );
 
     $res;
 }
 
 1;
-# ABSTRACT: Coerce perl::modname from str
+# ABSTRACT:
 
 =for Pod::Coverage ^(meta|coerce)$
 
@@ -39,12 +42,12 @@ sub coerce {
 
 This rule can normalize strings in the form of:
 
- Foo:Bar
- Foo-Bar
  Foo/Bar.pm
+ Foo::Bar
+ Foo:Bar
  Foo/Bar
  Foo.Bar
 
 into:
 
- Foo::Bar
+ Foo-Bar

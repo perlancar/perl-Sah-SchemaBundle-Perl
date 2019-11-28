@@ -1,6 +1,8 @@
-package Data::Sah::Coerce::perl::str::str_convert_perl_pod_to_path;
+package Data::Sah::Coerce::perl::To_str::From_str::convert_perl_pod_to_path;
 
+# AUTHOR
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -10,6 +12,7 @@ use warnings;
 sub meta {
     +{
         v => 4,
+        summary => 'Convert POD name existing in @INC to its filesystem path',
         prio => 50,
     };
 }
@@ -40,7 +43,7 @@ sub coerce {
 }
 
 1;
-# ABSTRACT: Convert POD name existing in @INC to its filesystem path
+# ABSTRACT:
 
 =for Pod::Coverage ^(meta|coerce)$
 

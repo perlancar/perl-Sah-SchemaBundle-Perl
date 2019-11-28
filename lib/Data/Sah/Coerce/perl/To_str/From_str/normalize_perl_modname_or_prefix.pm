@@ -1,6 +1,8 @@
-package Data::Sah::Coerce::perl::str::str_normalize_perl_modprefix;
+package Data::Sah::Coerce::perl::To_str::From_str::normalize_perl_modname_or_prefix;
 
+# AUTHOR
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -10,6 +12,7 @@ use warnings;
 sub meta {
     +{
         v => 4,
+        summary => 'Coerce perl::modname_or_prefix from str',
         prio => 50,
     };
 }
@@ -24,14 +27,14 @@ sub coerce {
     $res->{expr_match} = "!ref($dt)";
     $res->{expr_coerce} = join(
         "",
-        "do { my \$tmp = $dt; \$tmp =~ s!::?|/|\\.|-!::!g; \$tmp .= '::' if \$tmp =~ /\\A\\w+(::\\w+)*\\z/; \$tmp }",
+        "do { my \$tmp = $dt; \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.|-!::!g; \$tmp }",
     );
 
     $res;
 }
 
 1;
-# ABSTRACT: Coerce perl::modprefix from str
+# ABSTRACT:
 
 =for Pod::Coverage ^(meta|coerce)$
 
@@ -40,17 +43,17 @@ sub coerce {
 This rule can normalize strings in the form of:
 
  Foo::Bar
-
  Foo:Bar
- Foo:Bar:
-
  Foo-Bar
- Foo-Bar-
-
  Foo/Bar
- Foo/Bar/
-
+ Foo/Bar.pm
  Foo.Bar
+
+into `Foo::Bar`, while normalizing strings in the form of:
+
+ Foo:Bar:
+ Foo-Bar-
+ Foo/Bar/
  Foo.Bar.
 
 into:
