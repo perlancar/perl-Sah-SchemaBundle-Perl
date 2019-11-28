@@ -31,7 +31,7 @@ This schema comes with convenience completion too.
 
 _
     'x.perl.coerce_rules' => [
-        'str_convert_perl_pm_to_path',
+        'From_str::convert_perl_pm_to_path',
     ],
     'x.completion' => sub {
         require Complete::File;

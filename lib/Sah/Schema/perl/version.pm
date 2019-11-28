@@ -7,7 +7,7 @@ our $schema = [obj => {
     summary => 'Perl version object',
     isa => 'version',
     'x.perl.coerce_rules' => [
-        'str_perl_version',
+        'From_str::perl_version',
     ],
 }, {}];
 

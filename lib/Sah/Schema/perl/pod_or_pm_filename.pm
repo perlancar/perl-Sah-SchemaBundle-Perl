@@ -38,7 +38,7 @@ path to `Foo.pod` will be returned.
 
 _
     'x.perl.coerce_rules' => [
-        'str_convert_perl_pod_or_pm_to_path',
+        'From_str::convert_perl_pod_or_pm_to_path',
     ],
     'x.completion' => sub {
         require Complete::File;

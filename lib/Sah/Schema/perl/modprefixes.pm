@@ -26,7 +26,7 @@ _
     of => ["perl::modprefix", {req=>1}, {}],
 
     'x.perl.coerce_rules' => [
-        'str_or_array_expand_perl_modprefix_wildcard',
+        'From_str_or_array::expand_perl_modprefix_wildcard',
     ],
 
     # provide a default completion which is from list of installed perl modules
