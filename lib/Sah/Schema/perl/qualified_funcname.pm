@@ -26,7 +26,7 @@ _
 1;
 # ABSTRACT:
 
-=head1 prepend:SEE ALSO
+=head1 SEE ALSO
 
 L<Sah::Schema::perl::funcname>
 
