@@ -1,6 +1,8 @@
 package Sah::Schema::perl::funcname;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [str => {

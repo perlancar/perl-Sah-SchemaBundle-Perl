@@ -1,6 +1,8 @@
 package Sah::Schema::perl::qualified_funcname;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [str => {
@@ -14,6 +16,9 @@ Currently function name is restricted to this regex:
 and package name is restricted to this regex:
 
     [A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*
+
+This schema includes syntax validity check only; it does not check whether the
+function actually exists.
 
 _
     match => '\A(?:[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*::)[A-Za-z_]([A-Za-z_0-9]+)*\z',
