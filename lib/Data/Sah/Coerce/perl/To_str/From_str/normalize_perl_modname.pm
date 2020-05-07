@@ -24,7 +24,7 @@ sub coerce {
 
     my $res = {};
 
-    $res->{expr_match} = "1";
+    $res->{expr_match} = "!ref($dt)";
     $res->{expr_coerce} = join(
         "",
         "do { my \$tmp = $dt;",
