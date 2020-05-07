@@ -1,6 +1,6 @@
 package Data::Sah::Coerce::perl::To_str::From_str::normalize_perl_distname;
 
-# AUTHOR
+# AUTHORITY
 # DATE
 # DIST
 # VERSION
@@ -27,7 +27,12 @@ sub coerce {
     $res->{expr_match} = "1";
     $res->{expr_coerce} = join(
         "",
-        "do { my \$tmp = $dt; \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; \$tmp =~ s!::?|/|\\.!-!g; \$tmp }",
+        "do { my \$tmp = $dt;",
+        "  my \$versuffix = ''; \$versuffix = \$1 if \$tmp =~ s/(\@[0-9][0-9A-Za-z]*(\\.[0-9A-Za-z_]+)*)\\z//;", # extract version suffix part first
+        "  \$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!;",
+        "  \$tmp =~ s!::?|/|\\.!-!g;",
+        "  \$tmp . \$versuffix",
+        "}",
     );
 
     $res;
