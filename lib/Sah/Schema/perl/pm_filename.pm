@@ -6,7 +6,7 @@ package Sah::Schema::perl::pm_filename;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Filename of perl module, e.g. /path/Foo.pm',
+    summary => 'A .pm filename, e.g. /path/Foo.pm',
     description => <<'_',
 
 Use this schema if you want to accept a filesystem path containing Perl module.
