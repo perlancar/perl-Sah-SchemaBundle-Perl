@@ -61,3 +61,11 @@ _
 
 1;
 # ABSTRACT:
+
+=head1 SEE ALSO
+
+L<Sah::Schema::perl::filename>
+
+L<Sah::Schema::perl::pod_filename>
+
+L<Sah::Schema::perl::pm_filename>

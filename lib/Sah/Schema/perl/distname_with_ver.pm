@@ -6,7 +6,7 @@ package Sah::Schema::perl::distname_with_ver;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl distribution name with version number suffix (e.g. Foo-Bar@0.001)',
+    summary => 'Perl distribution name with version number suffix, e.g. Foo-Bar@0.001',
     match => '\A[A-Za-z_][A-Za-z_0-9]*(-[A-Za-z_0-9]+)*@[0-9][0-9A-Za-z]*(\\.[0-9A-Za-z_]+)*\z',
     'x.perl.coerce_rules' => [
         'From_str::normalize_perl_distname',
@@ -14,6 +14,20 @@ our $schema = [str => {
 
     # provide a default completion which is from list of installed perl distributions
     'x.completion' => 'perl_distname',
+
+
+    description => <<'_',
+
+For convenience (particularly in CLI with tab completion), you can input one of:
+
+    Foo::Bar@1.23
+    Foo/Bar@1.23
+    Foo/Bar.pm@1.23
+    Foo.Bar@1.23
+
+and it will be coerced into Foo-Bar form.
+
+_
 
     examples => [
         {value=>'', valid=>0},

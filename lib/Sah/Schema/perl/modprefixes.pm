@@ -1,10 +1,12 @@
 package Sah::Schema::perl::modprefixes;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [array => {
-    summary => 'Perl module prefixes',
+    summary => 'Perl module prefixes, e.g. ["", "Foo::", "Foo::Bar::"]',
     description => <<'_',
 
 Array of Perl module prefixes, where each element is of `perl::modprefix`

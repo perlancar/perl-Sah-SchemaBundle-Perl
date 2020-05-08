@@ -29,15 +29,21 @@ for (sort keys %all_versions) {
 }
 
 our $schema = [str => {
-    summary => 'One of known released versions of perl',
+    summary => 'One of known released versions of perl (e.g. 5.010 or 5.10.0)',
     description => <<'_',
 
+Use this schema if you want to accept one of the known released versions of
+perl.
+
 The list of releases of perl is retrieved from the installed core module
-<pm:Module::CoreList> as well as the one used during build. They both might not
-be the latest so the list might not be complete.
+<pm:Module::CoreList> during runtime as well as the one used during build. One
+of both those Module::CoreList instances might not be the latest, so this list
+might not be up-to-date. To ensure that the list is complete, you will need to
+keep your copy of Module::CoreList up-to-date.
 
 The list of version numbers include numified version (which, unfortunately,
-collapses e.g. 5.010000 into 5.010) as well as the x.y.z version (e.g. 5.10.0).
+collapses trailing zeros, e.g. 5.010000 into 5.010) as well as the x.y.z version
+(e.g. 5.10.0).
 
 _
     in => [sort keys %all_versions],

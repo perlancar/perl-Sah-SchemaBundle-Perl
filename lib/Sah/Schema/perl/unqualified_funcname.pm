@@ -6,7 +6,7 @@ package Sah::Schema::perl::unqualified_funcname;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl function name, must not be qualified with a package name',
+    summary => 'Perl function name which must not be qualified with a package name, e.g. subname',
     description => <<'_',
 
 Currently function name is restricted to this regex:

@@ -6,14 +6,15 @@ package Sah::Schema::perl::funcname;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl function name, either qualified or unqualified with a package name',
+    summary => 'Perl function name, either qualified with package name (e.g. Foo::subname) or unqualified (e.g. subname)',
     description => <<'_',
 
 Currently function name is restricted to this regex:
 
     \A[A-Za-z_][A-Za-z_0-9]*\z
 
-can be qualified (prefixed) by a package name, which is restricted to this regex:
+Function name can be qualified (prefixed) by a package name, which is restricted
+to this regex:
 
     [A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*
 
