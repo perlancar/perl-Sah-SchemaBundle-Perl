@@ -1,3 +1,8 @@
+0.028   2020-05-07  Released-By: PERLANCAR; Urgency: medium
+
+	- Add schemas: perl::{mod,dist}name_with_{,optional_}var.
+
+
 0.027   2020-02-15  Released-By: PERLANCAR; Urgency: medium
 
 	- Add schema: perl::release::version.
