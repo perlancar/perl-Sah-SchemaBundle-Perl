@@ -5,7 +5,7 @@ package Sah::Schema::perl::modargs;
 # DIST
 # VERSION
 
-our $schema = ['perl::modname_with_args' => {
+our $schema = ['perl::modname_with_optional_args' => {
     summary => 'Shorter alias for perl::modname_with_optional_args',
 }, {}];
 

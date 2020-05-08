@@ -1,3 +1,14 @@
+0.029   2020-05-08  Released-By: PERLANCAR; Urgency: medium
+
+	- [ux] Tweak abstracts of schema modules (add example to make it
+          clearer).
+
+        - [testing][doc] Add some examples to schema modules.
+
+        - Rename schema perl::modargs -> perl::modname_with_optional_args (old
+          name preserved).
+
+
 0.028   2020-05-07  Released-By: PERLANCAR; Urgency: medium
 
 	- Add schemas: perl::{mod,dist}name_with_{,optional_}var.
