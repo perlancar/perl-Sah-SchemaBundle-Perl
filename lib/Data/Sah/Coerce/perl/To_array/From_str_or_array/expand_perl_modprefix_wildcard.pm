@@ -14,13 +14,24 @@ sub meta {
         v => 4,
         summary => 'Expand wildcard of Perl module prefixes',
         prio => 50,
+        args => {
+            ns_prefix => {
+                schema => 'str*',
+            },
+        },
     };
 }
 
 sub coerce {
-    my %args = @_;
+    my %cargs = @_;
 
-    my $dt = $args{data_term};
+    my $dt = $cargs{data_term};
+    my $gen_args = $cargs{args};
+
+    my $ns_prefix = $gen_args->{ns_prefix};
+    if (defined $ns_prefix) {
+        $ns_prefix .= "::" unless $ns_prefix =~ /::\z/;
+    }
 
     my $res = {};
 
@@ -36,8 +47,9 @@ sub coerce {
         "  \$tmp->[\$i] =~ s!/!::!g; ",
         "  my \$el = \$tmp->[\$i++]; ",
         "  next unless String::Wildcard::Bash::contains_wildcard(\$el); ",
-        "  my \$mods = PERLANCAR::Module::List::list_modules(\$el, {wildcard=>1, list_modules=>1}); ",
+        "  my \$mods = PERLANCAR::Module::List::list_modules(" . (defined($ns_prefix) ? Data::Dmp::dmp($ns_prefix) . " . " : "") . "\$el, {wildcard=>1, list_modules=>0, list_prefixes=>1}); ",
         "  my \@mods = sort keys \%\$mods; ",
+        (defined($ns_prefix) ? "  for (\@mods) { substr(\$_, 0, ".length($ns_prefix).") = '' } " : ""),
         "  if (\@mods) { splice \@\$tmp, \$i-1, 1, \@mods; \$i += \@mods - 1 } ",
         "} ", # while
         "\$tmp ",
