@@ -6,7 +6,7 @@ package Sah::Schema::perl::qualified_funcname;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl function name, qualified with a package name',
+    summary => 'Perl function name qualified with a package name, e.g. Foo::subname',
     description => <<'_',
 
 Currently function name is restricted to this regex:

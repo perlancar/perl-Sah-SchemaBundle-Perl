@@ -1,10 +1,12 @@
 package Sah::Schema::perl::podname;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = ['str' => {
-    summary => 'Perl POD name',
+    summary => 'Perl POD name, e.g. Moose::Cookbook',
     description => <<'_',
 
 Perl POD name, e.g. `Config`, `Some::Other::POD`.

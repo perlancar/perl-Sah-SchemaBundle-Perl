@@ -6,7 +6,7 @@ package Sah::Schema::perl::modnames;
 # VERSION
 
 our $schema = [array => {
-    summary => 'Perl module names',
+    summary => 'Array of Perl module names, e.g. ["Foo::Bar", "Baz"]',
     description => <<'_',
 
 Array of Perl module names, where each element is of `perl::modname` schema,

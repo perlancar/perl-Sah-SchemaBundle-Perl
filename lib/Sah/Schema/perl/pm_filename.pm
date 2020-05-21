@@ -1,11 +1,17 @@
 package Sah::Schema::perl::pm_filename;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [str => {
-    summary => 'Filename (.pm file)',
+    summary => 'A .pm filename, e.g. /path/Foo.pm',
     description => <<'_',
+
+Use this schema if you want to accept a filesystem path containing Perl module.
+The value of this schema is in the convenience of CLI completion, as well as
+coercion from module name.
 
 String containing filename of a Perl module. For convenience, when value is in
 the form of:
@@ -55,3 +61,11 @@ _
 
 1;
 # ABSTRACT:
+
+=head1 SEE ALSO
+
+L<Sah::Schema::perl::filename>
+
+L<Sah::Schema::perl::pod_or_pm_filename>
+
+L<Sah::Schema::perl::pod_filename>

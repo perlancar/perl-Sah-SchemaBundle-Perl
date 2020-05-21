@@ -1,10 +1,12 @@
 package Sah::Schema::perl::pod_or_pm_filename;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [str => {
-    summary => 'Filename (.pod or .pm file)',
+    summary => 'A .pod or .pm filename, e.g. /path/Foo.pm or /path/Bar/Baz.pod',
     description => <<'_',
 
 String containing filename of a Perl POD or module. For convenience, when value
@@ -61,3 +63,11 @@ _
 
 1;
 # ABSTRACT:
+
+=head1 SEE ALSO
+
+L<Sah::Schema::perl::filename>
+
+L<Sah::Schema::perl::pod_filename>
+
+L<Sah::Schema::perl::pm_filename>

@@ -1,13 +1,13 @@
 package Sah::Schema::perl::modname_or_prefix;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl module name or prefix',
+    summary => 'Perl module name (e.g. Foo::Bar) or prefix (e.g. Foo::Bar::)',
     description => <<'_',
-
-Perl module name e.g. `Foo::Bar` or prefix e.g. `Foo::Bar::`.
 
 Contains coercion rule so inputing `Foo-Bar` or `Foo/Bar` will be normalized to
 `Foo::Bar` while inputing `Foo-Bar-` or `Foo/Bar/` will be normalized to
@@ -24,6 +24,17 @@ _
 
     # provide a default completion which is from list of installed perl modules
     'x.completion' => 'perl_modname_or_prefix',
+
+    examples => [
+        {value=>'', valid=>0},
+        {value=>'Foo::Bar', valid=>1},
+        {value=>'Foo::Bar::', valid=>1},
+        {value=>'Foo/Bar', valid=>1, validated_value=>'Foo::Bar'},
+        {value=>'Foo/Bar/', valid=>1, validated_value=>'Foo::Bar::'},
+        {value=>'Foo-Bar', valid=>1, validated_value=>'Foo::Bar'},
+        {value=>'Foo-Bar-', valid=>1, validated_value=>'Foo::Bar::'},
+        {value=>'Foo|Bar', valid=>0},
+    ],
 
 }, {}];
 

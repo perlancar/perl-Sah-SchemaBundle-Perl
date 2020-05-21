@@ -6,7 +6,7 @@ package Sah::Schema::perl::modname_with_ver;
 # VERSION
 
 our $schema = [str => {
-    summary => 'Perl module name with version number suffix (e.g. Foo::Bar@0.001)',
+    summary => 'Perl module name with version number suffix, e.g. Foo::Bar@0.001',
     match => '\A[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*@[0-9][0-9A-Za-z]*(\\.[0-9A-Za-z_]+)*\z',
     'x.perl.coerce_rules' => [
         'From_str::normalize_perl_modname',
