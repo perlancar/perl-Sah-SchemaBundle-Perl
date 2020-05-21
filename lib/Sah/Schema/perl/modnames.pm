@@ -1,6 +1,8 @@
 package Sah::Schema::perl::modnames;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 our $schema = [array => {
@@ -19,7 +21,7 @@ and it will be expanded to e.g.:
     ["Module::Patch", "Module::Path", "Module::Pluggable"]
 
 The wildcard syntax supports jokers (`?`, `*`, `**`), brackets (`[abc]`), and
-braces (`{one,two}`).
+braces (`{one,two}`). See <pm:Module::List::Wildcard> for more details.
 
 _
     of => ["perl::modname", {req=>1}, {}],
