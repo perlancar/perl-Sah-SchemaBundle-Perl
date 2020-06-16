@@ -5,6 +5,8 @@ package Sah::Schema::perl::modname;
 # DIST
 # VERSION
 
+use Regexp::Pattern::Perl::Module ();
+
 our $schema = [str => {
     summary => 'Perl module name, e.g. Foo::Bar',
     description => <<'_',
@@ -13,7 +15,7 @@ Contains coercion rule so you can also input `Foo-Bar`, `Foo/Bar`, `Foo/Bar.pm`
 or even 'Foo.Bar' and it will be normalized into `Foo::Bar`.
 
 _
-    match => '\A[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*\z',
+    match => $Regexp::Pattern::Perl::Module::RE{perl_modname}{pat},
 
     'x.perl.coerce_rules' => [
         'From_str::normalize_perl_modname',

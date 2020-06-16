@@ -19,7 +19,7 @@ just like the `-MMODULE=ARGS` shortcut that `perl` provides. Examples:
 See also: `perl::modname`.
 
 _
-    match => '\A[A-Za-z_][A-Za-z_0-9]*(::[A-Za-z_0-9]+)*(?:=.*)?\z',
+    match => $Regexp::Pattern::Perl::Module::RE{perl_modname_with_optional_args}{pat},
 
     'x.perl.coerce_rules' => [
         'From_str::normalize_perl_modname',
