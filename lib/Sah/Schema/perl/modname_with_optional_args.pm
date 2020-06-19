@@ -5,6 +5,8 @@ package Sah::Schema::perl::modname_with_optional_args;
 # DIST
 # VERSION
 
+use Regexp::Pattern::Perl::Module ();
+
 our $schema = [str => {
     summary => 'Perl module name (e.g. Foo::Bar) with optional arguments (e.g. Foo::Bar=arg1,arg2)',
     description => <<'_',
