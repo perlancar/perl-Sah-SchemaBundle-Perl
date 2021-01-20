@@ -15,7 +15,7 @@ Contains coercion rule so you can also input `Foo-Bar`, `Foo/Bar`, `Foo/Bar.pm`
 or even 'Foo.Bar' and it will be normalized into `Foo::Bar`.
 
 _
-    match => $Regexp::Pattern::Perl::Module::RE{perl_modname}{pat},
+    match => '\\A(?:' . $Regexp::Pattern::Perl::Module::RE{perl_modname}{pat} . ')\\z',
 
     'x.perl.coerce_rules' => [
         'From_str::normalize_perl_modname',

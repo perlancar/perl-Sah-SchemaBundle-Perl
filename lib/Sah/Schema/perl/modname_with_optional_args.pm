@@ -21,7 +21,7 @@ just like the `-MMODULE=ARGS` shortcut that `perl` provides. Examples:
 See also: `perl::modname`.
 
 _
-    match => $Regexp::Pattern::Perl::Module::RE{perl_modname_with_optional_args}{pat},
+    match => '\\A(?:' . $Regexp::Pattern::Perl::Module::RE{perl_modname_with_optional_args}{pat} . ')\\z',
 
     'x.perl.coerce_rules' => [
         'From_str::normalize_perl_modname',
@@ -35,6 +35,7 @@ _
         {value=>'Foo::Bar', valid=>1},
         {value=>'Foo::Bar=arg1,arg2', valid=>1},
         {value=>'Foo-Bar=arg1,arg2', valid=>1, validated_value=>'Foo::Bar=arg1,arg2'},
+        #{value=>'Foo::Bar=arg1,arg2 foo', valid=>0}, # XXX why fail?
     ],
 
 }, {}];
