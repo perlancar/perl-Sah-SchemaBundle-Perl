@@ -1,3 +1,8 @@
+0.036   2021-07-19  Released-By: PERLANCAR; Urgency: medium
+
+	- Add schemas: perl::modname::installed, perl::modname::not_installed.
+
+
 0.035   2021-01-20  Released-By: PERLANCAR; Urgency: medium
 
 	- [bugfix] Forgot to anchor patterns.

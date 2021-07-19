@@ -18,7 +18,8 @@ contains coercion rule so you can also input `Foo-Bar`, `Foo/Bar`, `Foo/Bar.pm`
 or even 'Foo.Bar' and it will be normalized into `Foo::Bar`.
 
 Note that this schema does not check that the Perl module exists or installed
-locally. To check that, use the `perl::modname::installed` schema.
+locally. To check that, use the `perl::modname::installed` schema. And there's
+also a `perl::modname::not_installed` schema.
 
 _
     match => '\\A(?:' . $Regexp::Pattern::Perl::Module::RE{perl_modname}{pat} . ')\\z',
