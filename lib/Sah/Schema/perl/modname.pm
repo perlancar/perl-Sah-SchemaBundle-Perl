@@ -17,11 +17,14 @@ offers completion from list of locally installed Perl modules. Second, it
 contains coercion rule so you can also input `Foo-Bar`, `Foo/Bar`, `Foo/Bar.pm`
 or even 'Foo.Bar' and it will be normalized into `Foo::Bar`.
 
-To see this in action, you can try e.g. the CLI `pmless` from <pm:App::PMUtils>
-and activate its tab completion. Then on the CLI try typing:
+To see this schema in action on the CLI, you can try e.g. the `pmless` script
+from <pm:App::PMUtils> and activate its tab completion (see its manpage for more
+details). Then on the CLI try typing:
 
     % pmless M/<tab>
     % pmless dzp/<tab>
+    % pmless Module/List/Wildcard
+    % pmless Module::List::Wildcard
 
 Note that this schema does not check that the Perl module exists or is installed
 locally. To check that, use the `perl::modname::installed` schema. And there's
