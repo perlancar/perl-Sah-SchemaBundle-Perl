@@ -11,14 +11,20 @@ our $schema = [str => {
     summary => 'Perl module name, e.g. Foo::Bar',
     description => <<'_',
 
-Contains coercion rule so you can also input `Foo-Bar`, `Foo/Bar`, `Foo/Bar.pm`
+This is a schema you can use when you want to accept a Perl module name. It
+offers basic checking of syntax as well as a couple of conveniences. First, it
+offers completion from list of locally installed Perl modules. Second, it
+contains coercion rule so you can also input `Foo-Bar`, `Foo/Bar`, `Foo/Bar.pm`
 or even 'Foo.Bar' and it will be normalized into `Foo::Bar`.
+
+Note that this schema does not check that the Perl module exists or installed
+locally. To check that, use the `perl::modname::installed` schema.
 
 _
     match => '\\A(?:' . $Regexp::Pattern::Perl::Module::RE{perl_modname}{pat} . ')\\z',
 
-    'x.perl.coerce_rules' => [
-        'From_str::normalize_perl_modname',
+    'prefilters' => [
+        'Perl::normalize_perl_modname',
     ],
 
     # provide a default completion which is from list of installed perl modules
