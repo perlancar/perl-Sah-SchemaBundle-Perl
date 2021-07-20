@@ -1,3 +1,11 @@
+0.038   2021-07-20  Released-By: PERLANCAR; Urgency: medium
+
+	- Remove warning with latest Test::Sah::Schema (0.010).
+
+	- [schema perl::modname][doc] Mention a demo of this schema in CLI using
+          'pmless'.
+
+
 0.037   2021-07-19  Released-By: PERLANCAR; Urgency: low
 
         - No functional changes.
