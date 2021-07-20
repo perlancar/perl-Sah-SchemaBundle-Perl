@@ -33,7 +33,7 @@ _
     # provide a default completion which is from list of installed perl modules
     'x.element_completion' => 'perl_modname',
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

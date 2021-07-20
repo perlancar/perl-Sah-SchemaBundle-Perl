@@ -38,7 +38,7 @@ _
         #{value=>'Foo::Bar=arg1,arg2 foo', valid=>0}, # XXX why fail?
     ],
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

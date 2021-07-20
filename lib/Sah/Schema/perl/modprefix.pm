@@ -44,7 +44,7 @@ _
         {value=>'Foo-', valid=>1, validated_value=>'Foo::'},
     ],
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

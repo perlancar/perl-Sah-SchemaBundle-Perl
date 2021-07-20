@@ -50,7 +50,7 @@ _
         {value=>'Foo|Bar', valid=>0},
     ],
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

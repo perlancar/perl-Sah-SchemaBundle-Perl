@@ -17,7 +17,7 @@ _
     'x.perl.coerce_rules' => [
         'From_str::perl_version',
     ],
-}, {}];
+}];
 
 1;
 # ABSTRACT:

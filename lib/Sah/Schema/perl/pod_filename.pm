@@ -57,7 +57,7 @@ _
         Complete::Util::combine_answers(@answers);
     },
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

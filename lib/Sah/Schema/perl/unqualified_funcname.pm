@@ -25,7 +25,7 @@ _
     # TODO: provide convenience by providing list of core function names etc
     #'x.completion' => 'perl_funcname',
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

@@ -40,7 +40,7 @@ _
         {value=>'Foo-Bar@a', valid=>0},
     ],
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

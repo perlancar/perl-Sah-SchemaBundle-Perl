@@ -23,7 +23,7 @@ _
     # provide a default completion which is from list of installed perl PODs
     'x.completion' => 'perl_modname',
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:

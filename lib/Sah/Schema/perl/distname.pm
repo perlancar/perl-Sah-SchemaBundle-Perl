@@ -27,7 +27,7 @@ For convenience (particularly in CLI with tab completion), you can input one of:
 and it will be coerced into Foo-Bar form.
 
 _
-}, {}];
+}];
 
 1;
 # ABSTRACT:

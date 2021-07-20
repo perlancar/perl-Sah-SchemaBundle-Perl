@@ -47,7 +47,7 @@ collapses trailing zeros, e.g. 5.010000 into 5.010) as well as the x.y.z version
 
 _
     in => [sort keys %all_versions],
-}, {}];
+}];
 
 1;
 # ABSTRACT:

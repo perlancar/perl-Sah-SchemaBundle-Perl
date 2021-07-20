@@ -26,7 +26,7 @@ our $schema = [str => {
         {value=>'Foo::Bar@a', valid=>0},
     ],
 
-}, {}];
+}];
 
 1;
 # ABSTRACT:
