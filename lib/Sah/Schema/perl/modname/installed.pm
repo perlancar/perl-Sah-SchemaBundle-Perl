@@ -1,5 +1,8 @@
 package Sah::Schema::perl::modname::installed;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST

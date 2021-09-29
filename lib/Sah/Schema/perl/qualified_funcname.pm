@@ -1,5 +1,8 @@
 package Sah::Schema::perl::qualified_funcname;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST

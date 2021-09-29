@@ -1,5 +1,8 @@
 package Sah::Schema::perl::distname_with_ver;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST

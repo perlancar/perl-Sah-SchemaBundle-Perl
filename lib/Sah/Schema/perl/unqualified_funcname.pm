@@ -1,5 +1,8 @@
 package Sah::Schema::perl::unqualified_funcname;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST

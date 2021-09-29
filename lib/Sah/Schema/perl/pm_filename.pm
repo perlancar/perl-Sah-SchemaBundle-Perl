@@ -1,5 +1,8 @@
 package Sah::Schema::perl::pm_filename;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST

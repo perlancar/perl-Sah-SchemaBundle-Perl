@@ -1,5 +1,8 @@
 package Sah::Schema::perl::release::version;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST

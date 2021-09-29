@@ -1,5 +1,8 @@
 package Sah::Schema::perl::pod_filename;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST
