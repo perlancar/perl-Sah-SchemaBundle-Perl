@@ -1,13 +1,13 @@
 package Data::Sah::Coerce::perl::To_str::From_str::convert_perl_pm_to_path;
 
-# AUTHOR
-# DATE
-# DIST
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 sub meta {
     +{

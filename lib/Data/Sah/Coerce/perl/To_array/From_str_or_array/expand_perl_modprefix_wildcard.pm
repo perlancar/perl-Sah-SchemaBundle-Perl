@@ -1,13 +1,13 @@
 package Data::Sah::Coerce::perl::To_array::From_str_or_array::expand_perl_modprefix_wildcard;
 
-# AUTHOR
-# DATE
-# DIST
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 sub meta {
     +{

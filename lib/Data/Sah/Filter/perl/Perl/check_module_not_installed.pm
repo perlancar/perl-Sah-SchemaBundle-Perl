@@ -1,13 +1,13 @@
 package Data::Sah::Filter::perl::Perl::check_module_not_installed;
 
+use 5.010001;
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST
 # VERSION
-
-use 5.010001;
-use strict;
-use warnings;
 
 sub meta {
     +{

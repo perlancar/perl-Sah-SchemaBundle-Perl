@@ -1,13 +1,13 @@
 package Data::Sah::Coerce::perl::To_obj::From_str::perl_version;
 
-# AUTHOR
-# DATE
-# DIST
-# VERSION
-
 use 5.010001;
 use strict;
 use warnings;
+
+# AUTHORITY
+# DATE
+# DIST
+# VERSION
 
 sub meta {
     +{
