@@ -12,7 +12,7 @@ use warnings;
 sub meta {
     +{
         v => 1,
-        summary => '"this" Perl module',
+        summary => '"this" Perl module name',
         description => <<'_',
 
 See <pm:App::ThisDist>'s `this_mod()` for more details on how "this module" is

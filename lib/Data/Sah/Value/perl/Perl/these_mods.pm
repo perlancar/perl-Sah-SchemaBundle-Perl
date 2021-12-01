@@ -1,4 +1,4 @@
-package Data::Sah::Value::perl::Perl::this_dist;
+package Data::Sah::Value::perl::Perl::these_mods;
 
 use 5.010001;
 use strict;
@@ -12,14 +12,16 @@ use warnings;
 sub meta {
     +{
         v => 1,
-        summary => '"this" Perl distribution name',
+        summary => '"these" Perl module names',
         description => <<'_',
 
 See <pm:App::ThisDist>'s `this_mod()` for more details on how "this module" is
-determined. Note that currently `App::ThisDist` is not automatically added as
+determined. Currently this rule returns a 1-element arrayref containing "this
+module". Note that currently `App::ThisDist` is not automatically added as
 prerequisite.
 
 _
+        prio => 50,
         args => {
             str => {schema=>'str*', req=>1},
             n => {schema=>'uint*', default=>1},
@@ -37,7 +39,7 @@ sub value {
 
     $res->{expr_value} = join(
         '',
-        'do { if (eval { require App::ThisDist; 1 }) { App::ThisDist::this_dist() } else { undef } }',
+        'do { if (eval { require App::ThisDist; 1 }) { my $thismod = App::ThisDist::this_mod(); defined $thismod ? [$thismod] : undef } else { undef } }',
     );
 
     $res;
