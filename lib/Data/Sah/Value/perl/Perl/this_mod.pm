@@ -22,8 +22,6 @@ prerequisite.
 _
         prio => 50,
         args => {
-            str => {schema=>'str*', req=>1},
-            n => {schema=>'uint*', default=>1},
         },
     };
 }

@@ -22,8 +22,6 @@ automatically added as prerequisite.
 
 _
         args => {
-            str => {schema=>'str*', req=>1},
-            n => {schema=>'uint*', default=>1},
         },
     };
 }
