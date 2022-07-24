@@ -1,3 +1,8 @@
+0.044   2022-07-24  Released-By: PERLANCAR; Urgency: medium
+
+        - Add schema: perl::modname_pm.
+
+
 0.043   2022-07-23  Released-By: PERLANCAR; Urgency: medium
 
         - Tweak coerce rules expand_perl_modname_wildcard to skip module
