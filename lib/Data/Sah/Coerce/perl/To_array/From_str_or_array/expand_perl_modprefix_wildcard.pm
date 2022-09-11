@@ -51,7 +51,7 @@ sub coerce {
         "  my \$mods = PERLANCAR::Module::List::list_modules(" . (defined($ns_prefix) ? Data::Dmp::dmp($ns_prefix) . " . " : "") . "\$el, {wildcard=>1, list_modules=>0, list_prefixes=>1}); ",
         "  my \@mods = sort keys \%\$mods; ",
         (defined($ns_prefix) ? "  for (\@mods) { substr(\$_, 0, ".length($ns_prefix).") = '' } " : ""),
-        "  if (\@mods) { splice \@\$tmp, \$i-1, 1, \@mods; \$i += \@mods - 1 } ",
+        "  if (\@mods) { splice \@\$tmp, \$i, 1, \@mods; \$i += \@mods - 1 } ",
         "} ", # while
         "\$tmp ",
         "}", # do
