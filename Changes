@@ -1,3 +1,12 @@
+0.045   2022-09-11  Released-By: PERLANCAR; Urgency: medium
+
+        - [bugfix] Fix off-by-one bug in wildcard expansion coerce rules.
+
+        - [doc] Add description to perl::distname schema.
+
+        - [dist] Add devnotes.org.
+
+
 0.044   2022-07-24  Released-By: PERLANCAR; Urgency: medium
 
         - Add schema: perl::modname_pm.
