@@ -35,6 +35,6 @@ _
 1;
 # ABSTRACT:
 
-=head1 append:SEE ALSO
+=head1 SEE ALSO
 
 L<perldata>

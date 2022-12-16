@@ -2,6 +2,8 @@ package Sah::Schema::perl::identifier::unqualified_unicode;
 
 use strict;
 use utf8;
+use warnings;
+no warnings 'experimental::regex_sets';
 
 # AUTHORITY
 # DATE
@@ -39,6 +41,6 @@ _
 1;
 # ABSTRACT:
 
-=head1 append:SEE ALSO
+=head1 SEE ALSO
 
 L<perldata>

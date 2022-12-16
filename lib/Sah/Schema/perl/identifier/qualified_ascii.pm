@@ -18,6 +18,8 @@ _
 
     examples => [
         {value=>'', valid=>0, summary=>'Empty'},
+
+        # ascii
         {value=>'foo', valid=>0, summary=>'Not qualified'},
         {value=>'foo::bar', valid=>1},
         {value=>"foo'bar", valid=>0, summary=>"This schema does not accept the old (soon-to-be-deprecated) namespace separator"},
@@ -28,6 +30,8 @@ _
         {value=>'foo0::bar', valid=>1},
         {value=>'foo::bar-baz', valid=>0, summary=>'Invalid character (dash)'},
         {value=>'$foo::bar', valid=>0, summary=>'Sigil not accepted'},
+
+        # unicode
         {value=>'foo::bébé', valid=>0, summary=>'Non-latin letter not accepted'},
     ],
 
@@ -36,6 +40,6 @@ _
 1;
 # ABSTRACT:
 
-=head1 append:SEE ALSO
+=head1 SEE ALSO
 
 L<perldata>
