@@ -16,6 +16,7 @@ sub meta {
         might_fail => 1,
         examples => [
             {value=>"Foo:Bar", valid=>1, filtered_value=>"Foo/Bar.pm"},
+            {value=>"Foo::Bar,arg1,arg2", valid=>1, filtered_value=>"Foo/Bar.pm=arg1,arg2"},
         ],
     };
 }
@@ -32,7 +33,7 @@ sub filter {
         "do { my \$tmp = $dt; ",
         "if (ref \$tmp) { [\"Must be a string and not a reference\", \$tmp] } ",
         "else { ", (
-            "my \$argssuffix = ''; \$argssuffix = \$1 if \$tmp =~ s/([=\%].*)\\z//; \$argssuffix =~ s/\\A\%/=/; ",  # extract args suffix (=arg1,arg2) first. we allow % in addition to =
+            "my \$argssuffix = ''; \$argssuffix = \$1 if \$tmp =~ s/([=,].*)\\z//; \$argssuffix =~ s/\\A,/=/; ",    # extract args suffix (=arg1,arg2) first. we allow % in addition to =
             "my \$versuffix = ''; \$versuffix = \$1 if \$tmp =~ s/(\@[0-9][0-9A-Za-z]*(\\.[0-9A-Za-z_]+)*)\\z//; ", # extract version suffix part first
             "\$tmp = \$1 if \$tmp =~ m!\\A(\\w+(?:/\\w+)*)\.pm\\z!; ",
             "\$tmp =~ s!::?|/|\\.|-!::!g; ",
@@ -73,7 +74,8 @@ as well as optional import arguments like perl's C<-M>:
  Foo/Bar.pm@1.23=arg1,arg2
 
 For convenience with bash completion (because C<=> is by default a word-breaking
-character in bash, while C<%> is not) you can use C<%> instead of C<=> and it will be normalized to C<=>.
+character in bash, while C<,> is not) you can use C<,> instead of C<=> and it
+will be normalized to C<=>.
 
- Foo/Bar.pm%arg1,arg2           # will become Foo/Bar.pm=arg1,arg2
- Foo/Bar.pm@1.23%arg1,arg2      # will become Foo/Bar.pm@1.23=arg1,arg2
+ Foo/Bar.pm,arg1,arg2           # will become Foo/Bar.pm=arg1,arg2
+ Foo/Bar.pm@1.23,arg1,arg2      # will become Foo/Bar.pm@1.23=arg1,arg2
