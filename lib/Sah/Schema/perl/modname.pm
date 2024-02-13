@@ -48,6 +48,7 @@ _
         {value=>'Foo::Bar', valid=>1},
         {value=>'Foo-Bar', valid=>1, validated_value=>'Foo::Bar'},
         {value=>'Foo/Bar', valid=>1, validated_value=>'Foo::Bar'},
+        {value=>'Foo//Bar', valid=>1, validated_value=>'Foo::Bar'},
         {value=>'Foo/Bar.pm', valid=>1, validated_value=>'Foo::Bar'},
         {value=>'Foo.Bar', valid=>1, validated_value=>'Foo::Bar'},
         {value=>'Foo|Bar', valid=>0},

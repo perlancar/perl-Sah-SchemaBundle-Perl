@@ -30,7 +30,7 @@ sub coerce {
         "do { my \$tmp = $dt;",
         "  my \$argssuffix = ''; \$argssuffix = \$1 if \$tmp =~ s/(=.*)\\z//;",                                  # extract args suffix (=arg1,arg2) first
         "  my \$versuffix = ''; \$versuffix = \$1 if \$tmp =~ s/(\@[0-9][0-9A-Za-z]*(\\.[0-9A-Za-z_]+)*)\\z//;", # extract version suffix part first
-        "  \$tmp =~ s!::?|/|\\.|-!::!g; \$tmp .= '::' if \$tmp =~ /\\A\\w+(::\\w+)*\\z/;",
+        "  \$tmp =~ s!::*|/+|\\.+|-!::!g; \$tmp .= '::' if \$tmp =~ /\\A\\w+(::+\\w+)*\\z/;",
         "  \$tmp . \$versuffix . \$argssuffix",
         "}",
     );

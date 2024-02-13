@@ -1,6 +1,6 @@
 # no code
 ## no critic: TestingAndDebugging::RequireUseStrict
-package Sah::Schemas::Perl;
+package Sah::SchemaBundle::Perl;
 
 # AUTHORITY
 # DATE
