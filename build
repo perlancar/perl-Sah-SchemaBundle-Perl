@@ -1,2 +1,0 @@
-#!/bin/bash
-PERL_POD_WEAVER_PLUGIN_RINCI_EXCLUDE_MODULES=Sah::SchemaR:: dzil build "$@"

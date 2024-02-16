@@ -1,3 +1,13 @@
+0.050   2024-02-16  Released-By: PERLANCAR; Urgency: medium
+
+        - Rename module/dist Sah-Schema{s,Bundle}-Perl following rename of
+          Sah-Schema{s,Bundle} (for visual clarity and consistency with naming
+          of other bundles).
+
+        - [ux] Allow Foo//Bar (in addition to Foo/Bar) to be normalized as
+          Foo::Bar.
+
+
 0.049   2023-10-26  Released-By: PERLANCAR; Urgency: low
 
         - No functional changes.
